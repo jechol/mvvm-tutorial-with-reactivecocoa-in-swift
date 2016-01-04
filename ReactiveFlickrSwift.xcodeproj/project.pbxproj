@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66D259BF055896B806DFC488 /* Pods_ReactiveFlickrSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA80346AC5582E752BA8AE5C /* Pods_ReactiveFlickrSwift.framework */; };
 		F45397EA1C3AF5D100D2B3B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45397E91C3AF5D100D2B3B0 /* AppDelegate.swift */; };
 		F45397EC1C3AF5D100D2B3B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45397EB1C3AF5D100D2B3B0 /* ViewController.swift */; };
 		F45397EF1C3AF5D100D2B3B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45397ED1C3AF5D100D2B3B0 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CEAF05F5A908EF1534C94C6 /* Pods-ReactiveFlickrSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveFlickrSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveFlickrSwift/Pods-ReactiveFlickrSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		CA80346AC5582E752BA8AE5C /* Pods_ReactiveFlickrSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFlickrSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6F6BAE3BB863694265BE248 /* Pods-ReactiveFlickrSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveFlickrSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveFlickrSwift/Pods-ReactiveFlickrSwift.release.xcconfig"; sourceTree = "<group>"; };
 		F45397E61C3AF5D100D2B3B0 /* ReactiveFlickrSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveFlickrSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45397E91C3AF5D100D2B3B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45397EB1C3AF5D100D2B3B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D259BF055896B806DFC488 /* Pods_ReactiveFlickrSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6DEE3D3447D3E54C7723F46A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA80346AC5582E752BA8AE5C /* Pods_ReactiveFlickrSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F45397DD1C3AF5D100D2B3B0 = {
 			isa = PBXGroup;
 			children = (
 				F45397E81C3AF5D100D2B3B0 /* ReactiveFlickrSwift */,
 				F45397E71C3AF5D100D2B3B0 /* Products */,
+				FD07D3761F9A3F3B1E107EDF /* Pods */,
+				6DEE3D3447D3E54C7723F46A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = ReactiveFlickrSwift;
 			sourceTree = "<group>";
 		};
+		FD07D3761F9A3F3B1E107EDF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CEAF05F5A908EF1534C94C6 /* Pods-ReactiveFlickrSwift.debug.xcconfig */,
+				D6F6BAE3BB863694265BE248 /* Pods-ReactiveFlickrSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F45397F81C3AF5D100D2B3B0 /* Build configuration list for PBXNativeTarget "ReactiveFlickrSwift" */;
 			buildPhases = (
+				831E6838FC0C07D75E950ABF /* Check Pods Manifest.lock */,
 				F45397E21C3AF5D100D2B3B0 /* Sources */,
 				F45397E31C3AF5D100D2B3B0 /* Frameworks */,
 				F45397E41C3AF5D100D2B3B0 /* Resources */,
+				2F888A66DE65F2453F9C4803 /* Embed Pods Frameworks */,
+				5A297DC8B33C90F1A649869D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F888A66DE65F2453F9C4803 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveFlickrSwift/Pods-ReactiveFlickrSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A297DC8B33C90F1A649869D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveFlickrSwift/Pods-ReactiveFlickrSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		831E6838FC0C07D75E950ABF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F45397E21C3AF5D100D2B3B0 /* Sources */ = {
@@ -247,6 +322,7 @@
 		};
 		F45397F91C3AF5D100D2B3B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CEAF05F5A908EF1534C94C6 /* Pods-ReactiveFlickrSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ReactiveFlickrSwift/Info.plist;
@@ -258,6 +334,7 @@
 		};
 		F45397FA1C3AF5D100D2B3B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6F6BAE3BB863694265BE248 /* Pods-ReactiveFlickrSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ReactiveFlickrSwift/Info.plist;
@@ -286,6 +363,7 @@
 				F45397FA1C3AF5D100D2B3B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

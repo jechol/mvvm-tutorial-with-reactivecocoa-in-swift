@@ -22,7 +22,7 @@ class RWTFlickrSearchViewController: UIViewController {
 
   func bindViewModel() {
     self.title = self.viewModel.title
-    self.searchTextField.text = self.viewModel.searchText
+    searchTextField.rac_textSignal() ~> RAC(self.viewModel, "searchText")
   }
 
 }

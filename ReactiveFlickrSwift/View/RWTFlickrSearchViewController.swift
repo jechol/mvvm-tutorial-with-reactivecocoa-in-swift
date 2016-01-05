@@ -27,6 +27,17 @@ class RWTFlickrSearchViewController: UIViewController {
       self.viewModel.searchText = text as! String
     }
     self.searchButton.rac_command = toRACCommand(self.viewModel.executeSearch)
-  }
 
+    self.viewModel.executeSearch.executing.producer
+      .observeOn(UIScheduler())
+      .startWithNext { (executing: Bool) -> () in
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = executing
+        self.loadingIndicator.hidden = !executing
+
+        if (executing) {
+          self.searchTextField.resignFirstResponder()
+        }
+    }
+  }
+  
 }

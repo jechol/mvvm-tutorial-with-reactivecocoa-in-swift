@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class RWTFlickrSearchViewController: UIViewController {
 
@@ -22,7 +23,10 @@ class RWTFlickrSearchViewController: UIViewController {
 
   func bindViewModel() {
     self.title = self.viewModel.title
-    searchTextField.rac_textSignal() ~> RAC(self.viewModel, "searchText")
+    self.searchTextField.rac_textSignal().toSignalProducer().startWithNext { (text) -> () in
+      self.viewModel.searchText = text as! String
+    }
+    self.searchButton.rac_command = toRACCommand(self.viewModel.executeSearch)
   }
 
 }

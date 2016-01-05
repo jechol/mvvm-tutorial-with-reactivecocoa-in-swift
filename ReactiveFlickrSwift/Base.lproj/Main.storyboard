@@ -6,10 +6,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Flickr Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReactiveFlickrSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RWTFlickrSearchViewController" customModule="ReactiveFlickrSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -46,6 +46,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LLv-UQ-ycT">
+                                <rect key="frame" x="424" y="85" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -53,8 +56,10 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Un6-QT-9Mm" secondAttribute="bottom" id="BD8-a4-XA3"/>
                             <constraint firstItem="Sck-R1-DbG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DWw-9I-myu"/>
                             <constraint firstItem="Un6-QT-9Mm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Fbv-lV-EqZ"/>
+                            <constraint firstItem="LLv-UQ-ycT" firstAttribute="centerY" secondItem="Ho3-fl-ioG" secondAttribute="centerY" id="HbX-2T-7iy"/>
                             <constraint firstItem="Sck-R1-DbG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="LY8-Yi-Nx0"/>
                             <constraint firstItem="Ho3-fl-ioG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="Qc8-SU-aVV"/>
+                            <constraint firstItem="LLv-UQ-ycT" firstAttribute="trailing" secondItem="Ho3-fl-ioG" secondAttribute="trailing" constant="-8" id="V6I-4E-LTc"/>
                             <constraint firstItem="Un6-QT-9Mm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="VaA-pW-hNh"/>
                             <constraint firstItem="Un6-QT-9Mm" firstAttribute="top" secondItem="Sck-R1-DbG" secondAttribute="bottom" constant="16" id="Vhj-Au-VQI"/>
                         </constraints>
@@ -66,6 +71,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="fpd-8R-sK7"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="LLv-UQ-ycT" id="dZa-Go-fuJ"/>
+                        <outlet property="searchButton" destination="Ra9-Pc-dOD" id="rXq-Xf-UPv"/>
+                        <outlet property="searchHistoryTable" destination="Un6-QT-9Mm" id="0ps-GO-uYz"/>
+                        <outlet property="searchTextField" destination="Ho3-fl-ioG" id="tmB-F1-b1n"/>
                         <segue destination="Nrm-7X-1yP" kind="show" identifier="ShowResult" id="Pla-ZN-50t"/>
                     </connections>
                 </viewController>

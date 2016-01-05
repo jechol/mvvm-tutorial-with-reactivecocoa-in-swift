@@ -32,11 +32,8 @@ class RWTFlickrSearchViewModel: NSObject {
   }
 
   func executeSearchSignal() -> SignalProducer<NSString, NSError> {
-    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
-    let scheduler = QueueScheduler(queue: queue)
-
     return SignalProducer.empty.on(completed: { NSLog("\($0)") })
-    .delay(2.0, onScheduler: scheduler).on(completed: { NSLog("\($0)") })
+    .delay(2.0, onScheduler: backgroundScheduler()).on(completed: { NSLog("\($0)") })
   }
 
 }

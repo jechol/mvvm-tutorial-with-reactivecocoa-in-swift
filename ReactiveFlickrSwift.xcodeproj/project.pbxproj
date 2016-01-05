@@ -15,6 +15,10 @@
 		F45397EA1C3AF5D100D2B3B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45397E91C3AF5D100D2B3B0 /* AppDelegate.swift */; };
 		F45397EF1C3AF5D100D2B3B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45397ED1C3AF5D100D2B3B0 /* Main.storyboard */; };
 		F45397F11C3AF5D100D2B3B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45397F01C3AF5D100D2B3B0 /* Assets.xcassets */; };
+		F4F7081B1C3BE791005FE2F9 /* RWTFlickrSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F7081A1C3BE791005FE2F9 /* RWTFlickrSearch.swift */; };
+		F4F7081D1C3BE7ED005FE2F9 /* RWTFlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F7081C1C3BE7ED005FE2F9 /* RWTFlickrPhoto.swift */; };
+		F4F7081F1C3BE9A4005FE2F9 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F7081E1C3BE9A4005FE2F9 /* Scheduler.swift */; };
+		F4F708211C3BEA57005FE2F9 /* RWTFlickrSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F708201C3BEA57005FE2F9 /* RWTFlickrSearchService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		F45397EE1C3AF5D100D2B3B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F45397F01C3AF5D100D2B3B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F45397F51C3AF5D100D2B3B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4F7081A1C3BE791005FE2F9 /* RWTFlickrSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RWTFlickrSearch.swift; sourceTree = "<group>"; };
+		F4F7081C1C3BE7ED005FE2F9 /* RWTFlickrPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RWTFlickrPhoto.swift; sourceTree = "<group>"; };
+		F4F7081E1C3BE9A4005FE2F9 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		F4F708201C3BEA57005FE2F9 /* RWTFlickrSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RWTFlickrSearchService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,7 @@
 			children = (
 				BA9F8E595A5B76CC65D82FEB /* RAC.swift */,
 				BA9F87324BDA4F85F9A7CA94 /* RACObserve.swift */,
+				F4F7081E1C3BE9A4005FE2F9 /* Scheduler.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -98,6 +107,7 @@
 		F45397E81C3AF5D100D2B3B0 /* ReactiveFlickrSwift */ = {
 			isa = PBXGroup;
 			children = (
+				F4F708171C3BE6B7005FE2F9 /* Model */,
 				F45397E91C3AF5D100D2B3B0 /* AppDelegate.swift */,
 				F45397ED1C3AF5D100D2B3B0 /* Main.storyboard */,
 				F45397F01C3AF5D100D2B3B0 /* Assets.xcassets */,
@@ -107,6 +117,16 @@
 				BA9F836FCEAC3B211E1881E5 /* Util */,
 			);
 			path = ReactiveFlickrSwift;
+			sourceTree = "<group>";
+		};
+		F4F708171C3BE6B7005FE2F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4F7081A1C3BE791005FE2F9 /* RWTFlickrSearch.swift */,
+				F4F7081C1C3BE7ED005FE2F9 /* RWTFlickrPhoto.swift */,
+				F4F708201C3BEA57005FE2F9 /* RWTFlickrSearchService.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FD07D3761F9A3F3B1E107EDF /* Pods */ = {
@@ -239,10 +259,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F7081F1C3BE9A4005FE2F9 /* Scheduler.swift in Sources */,
 				F45397EA1C3AF5D100D2B3B0 /* AppDelegate.swift in Sources */,
+				F4F708211C3BEA57005FE2F9 /* RWTFlickrSearchService.swift in Sources */,
+				F4F7081D1C3BE7ED005FE2F9 /* RWTFlickrPhoto.swift in Sources */,
 				BA9F88CDF657F97B4B84C826 /* RWTFlickrSearchViewModel.swift in Sources */,
 				BA9F847E4EB6ABEF3BD42626 /* RWTFlickrSearchViewController.swift in Sources */,
 				BA9F80110907B5B548451E12 /* RAC.swift in Sources */,
+				F4F7081B1C3BE791005FE2F9 /* RWTFlickrSearch.swift in Sources */,
 				BA9F8C66C7AF6D0C5E2A9BCF /* RACObserve.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

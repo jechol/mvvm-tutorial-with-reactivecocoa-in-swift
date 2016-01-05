@@ -19,6 +19,7 @@
 		F4F7081D1C3BE7ED005FE2F9 /* RWTFlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F7081C1C3BE7ED005FE2F9 /* RWTFlickrPhoto.swift */; };
 		F4F7081F1C3BE9A4005FE2F9 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F7081E1C3BE9A4005FE2F9 /* Scheduler.swift */; };
 		F4F708211C3BEA57005FE2F9 /* RWTFlickrSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F708201C3BEA57005FE2F9 /* RWTFlickrSearchService.swift */; };
+		F4F708231C3BEB45005FE2F9 /* RWTFlickrSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F708221C3BEB45005FE2F9 /* RWTFlickrSearchResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F4F7081C1C3BE7ED005FE2F9 /* RWTFlickrPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RWTFlickrPhoto.swift; sourceTree = "<group>"; };
 		F4F7081E1C3BE9A4005FE2F9 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		F4F708201C3BEA57005FE2F9 /* RWTFlickrSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RWTFlickrSearchService.swift; sourceTree = "<group>"; };
+		F4F708221C3BEB45005FE2F9 /* RWTFlickrSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RWTFlickrSearchResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				F4F7081A1C3BE791005FE2F9 /* RWTFlickrSearch.swift */,
 				F4F7081C1C3BE7ED005FE2F9 /* RWTFlickrPhoto.swift */,
 				F4F708201C3BEA57005FE2F9 /* RWTFlickrSearchService.swift */,
+				F4F708221C3BEB45005FE2F9 /* RWTFlickrSearchResults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F7081F1C3BE9A4005FE2F9 /* Scheduler.swift in Sources */,
+				F4F708231C3BEB45005FE2F9 /* RWTFlickrSearchResults.swift in Sources */,
 				F45397EA1C3AF5D100D2B3B0 /* AppDelegate.swift in Sources */,
 				F4F708211C3BEA57005FE2F9 /* RWTFlickrSearchService.swift in Sources */,
 				F4F7081D1C3BE7ED005FE2F9 /* RWTFlickrPhoto.swift in Sources */,

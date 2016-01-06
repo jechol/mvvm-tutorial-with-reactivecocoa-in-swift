@@ -13,12 +13,16 @@ class RWTFlickrSearchViewController: UIViewController {
   @IBOutlet var loadingIndicator: UIActivityIndicatorView!
   @IBOutlet var searchHistoryTable: UITableView!
 
-  var viewModel = RWTFlickrSearchViewModel()
+  var viewModel: RWTFlickrSearchViewModel! {
+    didSet {
+      self.bindViewModel()
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    bindViewModel()
+    self.viewModel = RWTFlickrSearchViewModel()
   }
 
   func bindViewModel() {
@@ -38,6 +42,15 @@ class RWTFlickrSearchViewController: UIViewController {
           self.searchTextField.resignFirstResponder()
         }
     }
+
+    self.viewModel.executeSearch.values.observeNext { (results) -> () in
+      self.performSegueWithIdentifier("ShowResults", sender: self)
+    }
+  }
+
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let resultsViewController = segue.destinationViewController as! RWTSearchResultsViewController
+    resultsViewController.viewModel = self.viewModel.searchResult!
   }
   
 }

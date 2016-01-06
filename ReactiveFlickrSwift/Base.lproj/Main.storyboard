@@ -75,23 +75,23 @@
                         <outlet property="searchButton" destination="Ra9-Pc-dOD" id="rXq-Xf-UPv"/>
                         <outlet property="searchHistoryTable" destination="Un6-QT-9Mm" id="0ps-GO-uYz"/>
                         <outlet property="searchTextField" destination="Ho3-fl-ioG" id="tmB-F1-b1n"/>
-                        <segue destination="Nrm-7X-1yP" kind="show" identifier="ShowResult" id="Pla-ZN-50t"/>
+                        <segue destination="Nrm-7X-1yP" kind="show" identifier="ShowResults" id="Pla-ZN-50t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="868"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search Results View Controller-->
         <scene sceneID="HCj-XF-pQX">
             <objects>
-                <tableViewController id="Nrm-7X-1yP" sceneMemberID="viewController">
+                <tableViewController id="Nrm-7X-1yP" customClass="RWTSearchResultsViewController" customModule="ReactiveFlickrSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bdd-q0-Pen">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Gob-b5-w2j">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Gob-b5-w2j">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gob-b5-w2j" id="gjA-Fq-j7Z">

@@ -12,6 +12,8 @@ class RWTFlickrSearchViewModel: NSObject {
   dynamic var title = "Flickr Search"
 
   var executeSearch: Action<AnyObject?, RWTFlickrSearchResults, NSError>!
+  var searchResult: RWTSearchResultsViewModel!
+
   let flickrSearch = RWTFlickrSearch()
 
   override init() {
@@ -28,11 +30,11 @@ class RWTFlickrSearchViewModel: NSObject {
     let validSearchProp = AnyProperty(initialValue: false, producer: validSearchSignal.mapError { $0 as! NoError })
 
     self.executeSearch = Action<AnyObject?, RWTFlickrSearchResults, NSError>(enabledIf: validSearchProp,
-      { (_) -> SignalProducer<RWTFlickrSearchResults, NSError> in return self.executeSearchSignal()
+      { _ in return self.executeSearchSignal()
     })
   }
 
   func executeSearchSignal() -> SignalProducer<RWTFlickrSearchResults, NSError> {
-    return flickrSearch.flickrSearchSignal(self.searchText).on(next: { NSLog("\($0)") })
+    return flickrSearch.flickrSearchSignal(self.searchText).on(next: { self.searchResult = RWTSearchResultsViewModel(searchResults: $0) })
   }
 }

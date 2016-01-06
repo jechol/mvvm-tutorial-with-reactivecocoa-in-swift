@@ -57,7 +57,7 @@ class RWTFlickrSearch: NSObject, OFFlickrAPIRequestDelegate {
 
         // Success
         let successSignal = self.rac_signalForSelector("flickrAPIRequest:didCompleteWithResponse:", fromProtocol: OFFlickrAPIRequestDelegate.self).doNext({ (obj) -> Void in
-          NSLog("\(obj)")
+//          NSLog("\(obj)")
         })
           .toSignalProducer().map { $0 as! RACTuple }.map { (req: $0.first as? OFFlickrAPIRequest, resp: $0.second as? [NSObject : AnyObject]!) }
 

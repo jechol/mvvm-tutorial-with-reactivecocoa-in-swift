@@ -6,7 +6,7 @@
 import UIKit
 import ReactiveCocoa
 
-class RWTFlickrSearchViewController: UIViewController {
+class RWTFlickrSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet var searchTextField: UITextField!
   @IBOutlet var searchButton: UIButton!
@@ -23,6 +23,8 @@ class RWTFlickrSearchViewController: UIViewController {
     super.viewDidLoad()
 
     self.viewModel = RWTFlickrSearchViewModel()
+    self.searchHistoryTable.delegate = self
+    self.searchHistoryTable.dataSource = self
   }
 
   func bindViewModel() {
@@ -46,11 +48,32 @@ class RWTFlickrSearchViewController: UIViewController {
     self.viewModel.executeSearch.values.observeNext { (results) -> () in
       self.performSegueWithIdentifier("ShowResults", sender: self)
     }
+
+    self.viewModel.previousSearches.producer.observeOn(UIScheduler())
+      .startWithNext { (searches) -> () in
+        NSLog("previouse searches: \(searches.count)")
+        self.searchHistoryTable.reloadData()
+    }
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     let resultsViewController = segue.destinationViewController as! RWTSearchResultsViewController
     resultsViewController.viewModel = self.viewModel.searchResult!
   }
-  
+
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return viewModel.previousSearches.value.count
+  }
+
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("RecentSearchItem") as! RWTPreviousTableCell
+
+    let search = self.viewModel.previousSearches.value[indexPath.row]
+    cell.viewModel = search
+
+    return cell
+  }
+
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+  }
 }

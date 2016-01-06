@@ -25,9 +25,9 @@ class RWTSearchResultsViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
-    cell.textLabel!.text = self.viewModel.searchResults[indexPath.row].title
-
+    let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! RWTSearchResultsTableViewCell
+    cell.viewModel = viewModel.searchResults[indexPath.row]
+    
     return cell
   }
 

@@ -36,10 +36,10 @@ class RWTFlickrSearchViewModel: NSObject {
       return self.executeSearchSignal()
     })
 
-    self.previousSearchSelected = Action<RWTPreviousSearch, RWTFlickrSearchResults, NSError>(enabledIf: validSearchProp, { (previous: RWTPreviousSearch) in
+    self.previousSearchSelected = Action<RWTPreviousSearch, RWTFlickrSearchResults, NSError> { (previous: RWTPreviousSearch) in
       self.searchText = previous.searchString
       return self.executeSearchSignal()
-    })
+    }
   }
 
   func executeSearchSignal() -> SignalProducer<RWTFlickrSearchResults, NSError> {

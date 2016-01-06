@@ -49,6 +49,10 @@ class RWTFlickrSearchViewController: UIViewController, UITableViewDelegate, UITa
       self.performSegueWithIdentifier("ShowResults", sender: self)
     }
 
+    self.viewModel.previousSearchSelected.values.observeNext { (results) -> () in
+      self.performSegueWithIdentifier("ShowResults", sender: self)
+    }
+
     self.viewModel.previousSearches.producer.observeOn(UIScheduler())
       .startWithNext { (searches) -> () in
         NSLog("previouse searches: \(searches.count)")
@@ -75,5 +79,7 @@ class RWTFlickrSearchViewController: UIViewController, UITableViewDelegate, UITa
   }
 
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    self.viewModel.previousSearchSelected
+      .apply(self.viewModel.previousSearches.value[indexPath.row]).startWithNext { _ in }
   }
 }
